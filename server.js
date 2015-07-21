@@ -10,7 +10,7 @@
 
     // configuration =================
 
-    mongoose.connect('mongodb://node:nodeuser@mongo.onmodulus.net:27017/uwO3mypu');     // connect to mongoDB database on modulus.io
+    mongoose.connect('mongodb://jesstlombera@gmail.com:csongito1489@apollo.modulusmongo.net:27017/ozijYp7a');     // connect to mongoDB database on modulus.io
 
     app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
     app.use(morgan('dev'));                                         // log every request to the console
@@ -18,6 +18,12 @@
     app.use(bodyParser.json());                                     // parse application/json
     app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
     app.use(methodOverride());
+
+
+       // define model =================
+    var Todo = mongoose.model('Todo', {
+        text : String
+    });
 
     // listen (start app with node server.js) ======================================
     app.listen(8080);
